@@ -1,0 +1,13 @@
+jobs:
+  testit:
+    name: Test Job for M1 runner
+    runs-on: self-hosted
+    steps:
+    - name: do stuff default
+      run: |
+        arch
+        python3 -V
+    - name: do stuff forced arm64
+      run: |
+        arch -arm64 zsh -c 'echo hi mom from $(arch)'
+
