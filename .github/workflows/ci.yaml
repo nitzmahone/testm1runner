@@ -1,3 +1,4 @@
+on: push
 jobs:
   testit:
     name: Test Job for M1 runner
