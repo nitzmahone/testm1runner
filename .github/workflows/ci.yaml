@@ -1,4 +1,7 @@
 on: push
+defaults:
+  run:
+    shell: arch -arm64 bash --noprofile --norc -eo pipefail {0}
 jobs:
   testit:
     name: Test Job for M1 runner
@@ -10,6 +13,7 @@ jobs:
     - name: do stuff default
       run: |
         arch
+        zsh -c 'echo hi mom from $(arch)'
         python3 -V
         pwd
         ls -la
