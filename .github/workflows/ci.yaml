@@ -5,7 +5,7 @@ defaults:
 jobs:
   testit:
     name: Test Job for M1 runner
-    runs-on: self-hosted
+    runs-on: [self-hosted, macos, arm64]
     steps:
     - name: clone repo
       uses: actions/checkout@v2
