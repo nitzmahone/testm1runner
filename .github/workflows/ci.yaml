@@ -1,4 +1,4 @@
-on: push
+on: [push, workflow_dispatch]
 defaults:
   run:
     shell: arch -arm64 bash --noprofile --norc -eo pipefail {0}
