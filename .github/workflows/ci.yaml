@@ -1,24 +1,8 @@
 on: [push, workflow_dispatch]
-defaults:
-  run:
-    shell: arch -arm64 bash --noprofile --norc -eo pipefail {0}
 jobs:
   testit:
-    name: Test Job for M1 runner
-    runs-on: [self-hosted, macos, arm64]
+    runs-on: ubuntu-latest
     steps:
-    - name: clone repo
-      uses: actions/checkout@v2
-
-    - name: do stuff default
+    - name: locales
       run: |
-        arch
-        zsh -c 'echo hi mom from $(arch)'
-        python3 -V
-        pwd
-        ls -la
-
-    - name: do stuff forced arm64
-      run: |
-        arch -arm64 zsh -c 'echo hi mom from $(arch)'
-
+        locale -a
