@@ -7,4 +7,6 @@ jobs:
     steps:
     - name: poke at it
       run: |
-        cat /proc/self/cpuset
+        python3 -m pip install ansible-core
+        ansible localhost -m setup
+  
