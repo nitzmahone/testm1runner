@@ -2,7 +2,9 @@ on: [push, workflow_dispatch]
 jobs:
   testit:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.8
     steps:
-    - name: locales
+    - name: poke at it
       run: |
-        locale -a
+        cat /proc/self/cpuset
